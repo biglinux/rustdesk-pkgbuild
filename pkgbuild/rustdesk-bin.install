@@ -1,0 +1,36 @@
+# arg 1:  the new package version
+#pre_install() {
+#}
+
+# arg 1:  the new package version
+post_install() {
+	echo '[Desktop Entry]
+Version=1.0
+Name=Remote Desktop RustDesk
+Name[pt]=Acesso remoto RustDesk
+Exec=rustdesk %u
+Icon=/usr/share/rustdesk/files/rustdesk.png
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=Network;
+Keywords=internet;remote;access;remoto;anydesk;teamviewer;
+Actions=new-window;
+
+X-Desktop-File-Install-Version=0.23
+
+[Desktop Action new-window]
+Name=Open a New Window' > /usr/share/applications/rustdesk.desktop
+	
+	update-desktop-database
+}
+
+
+
+
+
+# arg 1:  the old package version
+post_remove() {
+	rm /usr/share/applications/rustdesk.desktop || true
+	update-desktop-database
+}

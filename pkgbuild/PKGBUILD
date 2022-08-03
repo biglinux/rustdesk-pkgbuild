@@ -1,0 +1,32 @@
+# Maintainer: taotieren <admin@taotieren.com>
+
+pkgname=rustdesk-bin
+pkgver=1.1.9
+pkgrel=0
+pkgdesc="Yet another remote desktop software, written in Rust. Works out of the box, no configuration required. Great alternative to TeamViewer and AnyDesk! "
+arch=('x86_64')
+url="https://github.com/rustdesk/rustdesk"
+license=('GPLv3')
+provides=(${pkgname})
+conflicts=(${pkgname} ${pkgname%-bin} ${pkgname/bin/git} )
+#replaces=(${pkgname})
+depends=('gtk3' 'xdotool' 'libxcb' 'libxfixes' 'alsa-lib' 'pulseaudio')
+# 'libsciter-gtk-bin'
+makedepends=('unzip' 'zip' 'pkg-config' 'make' 'git' 'cmake' 'gcc' 'curl' 'wget' 'rust' 'yasm' 'nasm' 'clang')
+backup=()
+options=('!strip')
+install=${pkgname}.install
+source=("https://github.com/rustdesk/rustdesk/releases/download/1.1.9/rustdesk-1.1.9-manjaro-arch.pkg.tar.zst"
+        "${pkgname}.install")
+sha256sums=('af63a02458a3fd18193135fac6212af418c177b3116ff3ab9f7cae39b6147c60'
+'86cd37973b1455aca50913a995bc6a4a6f1a0c29f847e9aa8d287b98b3b75036')
+
+noextract=("rustdesk-${pkgver}-manjaro-arch.pkg.tar.zst")
+
+prepare() {
+    bsdtar -xf "${srcdir}/rustdesk-${pkgver}-manjaro-arch.pkg.tar.zst"
+}
+
+package() {
+     cp -r "${srcdir}/usr" "${pkgdir}/"
+}
