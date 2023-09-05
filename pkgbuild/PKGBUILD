@@ -19,7 +19,7 @@ install=${pkgname}.install
 source=("https://github.com/rustdesk/rustdesk/releases/download/${pkgver}/rustdesk-${pkgver}-$pkgrel-x86_64.pkg.tar.zst"
         "${pkgname}.install")
 sha256sums=('475271880d3f78bcd571b6c2d382f855c8451f41cba992a51ac9fd7e7c9d84e2'
-'7cbcf8d96cf989ad4b7663f138435f9b8d7852666d9707f1f87d1f35e8f7c48c')
+'907d063f18943b705e8b16eefbe607a68d788e6a364c81ab61a12a9e77e95d87')
 
 noextract=("rustdesk-${pkgver}-manjaro-arch.pkg.tar.zst")
 
