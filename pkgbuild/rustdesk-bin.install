@@ -9,7 +9,7 @@ Version=1.0
 Name=Remote Desktop RustDesk
 Name[pt]=Acesso remoto RustDesk
 Exec=rustdesk %u
-Icon=/usr/share/rustdesk/files/rustdesk.png
+Icon=rustdesk
 Terminal=false
 Type=Application
 StartupNotify=true
@@ -24,9 +24,6 @@ Name=Open a New Window' > /usr/share/applications/rustdesk.desktop
 	
 	update-desktop-database
 }
-
-
-
 
 
 # arg 1:  the old package version
