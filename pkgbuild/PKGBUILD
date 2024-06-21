@@ -1,8 +1,8 @@
 # Maintainer: taotieren <admin@taotieren.com>
 
 pkgname=rustdesk-bin
-pkgver=1.2.2
-pkgrel=0
+pkgver=1.2.3
+pkgrel=2
 pkgdesc="Yet another remote desktop software, written in Rust. Works out of the box, no configuration required. Great alternative to TeamViewer and AnyDesk! "
 arch=('x86_64')
 url="https://github.com/rustdesk/rustdesk"
